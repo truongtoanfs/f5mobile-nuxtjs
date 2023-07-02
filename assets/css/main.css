@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-green-primary: 55 181 72;
+    --color-red-primary: 153 1 6;
+  }
+  /* width */
+    ::-webkit-scrollbar {
+      @apply w-2;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      @apply bg-gray-300 rounded-lg;
+    }
+}
+
+@layer components {
+  .container {
+    @apply px-2 lg:max-w-3xl lg:mx-auto xl:max-w-1300 xl:px-0;
+  }
+}
+
+@layer utilities {
+  .overlay {
+    @apply fixed inset-0 z-10 bg-black bg-opacity-20;
+  }
+}
