@@ -1893,6 +1893,11 @@ cli-width@^4.0.0:
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-4.0.0.tgz#a5622f6a3b0a9e3e711a25f099bf2399f608caf6"
   integrity sha512-ZksGS2xpa/bYkNzN3BAw1wEjsLV/ZKOf/CCrJ/QOBsxx6fOARIkwTutxp1XIOIohi6HKmOFjMoK/XaqDVUpEEw==
 
+clickout-event@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/clickout-event/-/clickout-event-1.1.2.tgz#1a7f98654cd46c8813fc0f72e00d2c01e378f751"
+  integrity sha512-oGb80mX872OcwV5Rfz6khuolsi3cJHLGHmJ+Tvw9w6J3MejH5StPfFma+Z3rPhNZ+vCXnAo+GLBl09bfxCLaSQ==
+
 clipboardy@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/clipboardy/-/clipboardy-3.0.0.tgz#f3876247404d334c9ed01b6f269c11d09a5e3092"
