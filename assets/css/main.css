@@ -27,4 +27,10 @@
   .overlay {
     @apply fixed inset-0 z-10 bg-black bg-opacity-20;
   }
+  .text-link {
+    @apply text-blue-600;
+  }
+  .text-grey-primary {
+    color: #333;
+  }
 }
