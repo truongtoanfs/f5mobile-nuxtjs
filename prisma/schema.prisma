@@ -11,21 +11,21 @@ datasource db {
 }
 
 model Product {
-  id          Int      @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   name        String
-  new_price   Int
+  new_price   Int?
   old_price   Int?
   total       Int
   sold        Int
   description String?
-  category_id Int
+  series_id   Int
   color_id    Int
   storage_id  Int
   status_id   Int
-  category    Category @relation(fields: [category_id], references: [id])
-  color       Color    @relation(fields: [color_id], references: [id])
-  storage     Storage  @relation(fields: [storage_id], references: [id])
-  status      Status   @relation(fields: [status_id], references: [id])
+  category    Series  @relation(fields: [series_id], references: [id])
+  color       Color   @relation(fields: [color_id], references: [id])
+  storage     Storage @relation(fields: [storage_id], references: [id])
+  status      Status  @relation(fields: [status_id], references: [id])
 
   orderItem OrderItem[]
 }
@@ -33,33 +33,36 @@ model Product {
 model Color {
   id      Int       @id @default(autoincrement())
   color   String
+  value   String
   product Product[]
 }
 
 model Storage {
   id      Int       @id @default(autoincrement())
   storage String
+  value   Int
   product Product[]
 }
 
 model Status {
   id      Int       @id @default(autoincrement())
   status  String
+  value   Int
   product Product[]
 }
 
 model Category {
-  id       Int       @id @default(autoincrement())
+  id       Int      @id @default(autoincrement())
   category String
-  product  Product[]
   series   Series[]
 }
 
 model Series {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   series      String
   category_id Int
-  category    Category @relation(fields: [category_id], references: [id])
+  category    Category  @relation(fields: [category_id], references: [id])
+  product     Product[]
 }
 
 model Order {
