@@ -8,6 +8,14 @@ const props = defineProps({
 
 const productCategoriesObject = menuNav.find(item => item.title.toLowerCase() === props.layoutTitle.toLowerCase());
 
+const products = ref({});
+
+onBeforeMount(async () => {
+  const { data: response } = await useFetch('/api/prisma/products');
+  console.log('products.value', response);
+
+})
+
 </script>
 <template>
   <div class="pb-2">
