@@ -1,22 +1,3 @@
-<script lang="ts" setup>
-import { menuNav, productsList } from "@/config/constants";
-import { getImageUrl, formatNumberToLocal, calculateDiscountPercent } from "@/utils";
-
-const props = defineProps({
-  layoutTitle: { type: String, required: true },
-})
-
-const productCategoriesObject = menuNav.find(item => item.title.toLowerCase() === props.layoutTitle.toLowerCase());
-
-const products = ref({});
-
-onBeforeMount(async () => {
-  const { data: response } = await useFetch('/api/prisma/products');
-  console.log('products.value', response);
-
-})
-
-</script>
 <template>
   <div class="pb-2">
     <div class="py-5 flex flex-col xl:flex-row xl:justify-between xl:items-center xl:py-1">
@@ -58,6 +39,17 @@ onBeforeMount(async () => {
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { menuNav, productsList } from "@/config/constants";
+import { getImageUrl, formatNumberToLocal, calculateDiscountPercent } from "@/utils";
+
+const props = defineProps({
+  layoutTitle: { type: String, required: true },
+})
+
+const productCategoriesObject = menuNav.find(item => item.title.toLowerCase() === props.layoutTitle.toLowerCase());
+</script>
 
 <style scoped>
 .text-xsm {

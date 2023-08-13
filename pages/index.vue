@@ -1,3 +1,11 @@
+<template>
+  <div class="container mx-auto">
+    <HomeBanner />
+    <HomeProductsList layoutTitle="12 series" />
+    <HomeSearchTags />
+  </div>
+</template>
+
 <script setup lang="ts">
 useHead({
   script: [
@@ -10,11 +18,15 @@ useHead({
     }
   ]
 })
+
+import productServices from '../services/product';
+
+const { data } = await useAsyncData('products', async () => {
+  try {
+    const { data: response } = await productServices.getProducts();
+    return response;
+  } catch (error) {
+    console.log('error', error);
+  }
+});
 </script>
-<template>
-  <div class="container mx-auto">
-    <HomeBanner />
-    <HomeProductsList layoutTitle="12 series" />
-    <HomeSearchTags />
-  </div>
-</template>

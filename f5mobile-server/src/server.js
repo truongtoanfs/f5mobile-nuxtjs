@@ -4,7 +4,8 @@ const port = 5000
 
 // enable make requests CORS
 const cors = require('cors');
-app.use(cors());
+app.use(cors({ origin: ['http://localhost:3000'], credentials: true }));
+
 
 // process post data from form:
 app.use(express.urlencoded({ extended: true }));
