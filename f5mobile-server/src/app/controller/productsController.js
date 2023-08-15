@@ -11,7 +11,20 @@ class ProductsController {
     async index(req, res, next) {
         try {
             const results = await pool.query(fullProductInfo);
-            res.status(200).json(results.rows);
+
+            const categories = results.rows.reduce((value, item) => {
+                const itemIndex = value.findIndex((valueItem) => valueItem.category === item.category);
+                if (itemIndex >= 0) {
+                    value[itemIndex].products.push(item);
+                } else {
+                    value.push({
+                        category: item.category,
+                        products: [item],
+                    });
+                }
+                return value;
+            }, []);
+            res.status(200).json(categories);
         } catch (error) {
             throw error;
         }

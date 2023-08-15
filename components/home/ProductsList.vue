@@ -46,6 +46,12 @@ import { getImageUrl, formatNumberToLocal, calculateDiscountPercent } from "@/ut
 
 const props = defineProps({
   layoutTitle: { type: String, required: true },
+  products: {
+    type: Object,
+    default() {
+      return {}
+    }
+  },
 })
 
 const productCategoriesObject = menuNav.find(item => item.title.toLowerCase() === props.layoutTitle.toLowerCase());

@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <HomeBanner />
-    <HomeProductsList layoutTitle="12 series" />
+    <HomeProductsList v-for="item in data" :key="item.category" :layoutTitle="item.category" :products="item.products" />
     <HomeSearchTags />
   </div>
 </template>
@@ -29,4 +29,7 @@ const { data } = await useAsyncData('products', async () => {
     console.log('error', error);
   }
 });
+
+// ['14 Series', '13 Series'];
+
 </script>
