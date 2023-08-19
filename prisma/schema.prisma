@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  name        String
+  new_price   Int?
+  old_price   Int?
+  total       Int
+  sold        Int
+  description String?
+  series_id   Int
+  color_id    Int
+  storage_id  Int
+  status_id   Int
+  category    Series  @relation(fields: [series_id], references: [id])
+  color       Color   @relation(fields: [color_id], references: [id])
+  storage     Storage @relation(fields: [storage_id], references: [id])
+  status      Status  @relation(fields: [status_id], references: [id])
+
+  orderItem OrderItem[]
+}
+
+model Color {
+  id      Int       @id @default(autoincrement())
+  color   String
+  value   String
+  product Product[]
+}
+
+model Storage {
+  id      Int       @id @default(autoincrement())
+  storage String
+  value   Int
+  product Product[]
+}
+
+model Status {
+  id      Int       @id @default(autoincrement())
+  status  String
+  value   Int
+  product Product[]
+}
+
+model Category {
+  id       Int      @id @default(autoincrement())
+  category String
+  series   Series[]
+}
+
+model Series {
+  id          Int       @id @default(autoincrement())
+  series      String
+  category_id Int
+  category    Category  @relation(fields: [category_id], references: [id])
+  product     Product[]
+}
+
+model Order {
+  id           Int         @id
+  phone_number String
+  address      String
+  user_id      Int
+  amount       Int
+  created_At   DateTime
+  orderItem    OrderItem[]
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  productId Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model User {
+  user_id      Int    @id @default(autoincrement())
+  username     String
+  password     String
+  phone_number Int
+  email        String @unique
+}
