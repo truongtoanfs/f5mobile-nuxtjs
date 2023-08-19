@@ -4,7 +4,8 @@ const images = import.meta.glob('@/assets/images/**/*.{jpg, png}', {
 })
 const imagePaths = Object.keys(images);
 export function getImageUrl(name: string) {
-  return 'http://localhost:5000/';
+  const imageUrl = imagePaths.find((item) => item.includes(name));
+  return imageUrl ? images[imageUrl] : '';
 }
 
 export function formatNumberToLocal(number: number) {

@@ -36,7 +36,7 @@
           >
             <img
               class="max-w-[90%] max-h-[90%] group-hover:max-w-full group-hover:max-h-full transition-all"
-              :src="getImageUrl(product.avatar)"
+              :src="`${urls.BACKEND_URL}${product.series_img}`"
               alt="iphone 12 Lock 64Gb"
             />
             <div
@@ -76,11 +76,8 @@
 
 <script lang="ts" setup>
 import { menuNav, productsList } from "@/config/constants";
-import {
-  getImageUrl,
-  formatNumberToLocal,
-  calculateDiscountPercent,
-} from "@/utils";
+import urls from "@/config/urls";
+import { formatNumberToLocal, calculateDiscountPercent } from "@/utils";
 
 const props = defineProps({
   layoutTitle: { type: String, required: true },

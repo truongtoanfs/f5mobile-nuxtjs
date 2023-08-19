@@ -1,11 +1,10 @@
 import { request } from "../utils/request";
-import { getEndpoint } from '../config/endpoint';
+import urls from '../config/urls';
 
 function getProducts() {
-  const endpoint = getEndpoint();
   return request({
     method: 'get',
-    url: endpoint.PRODUCTS,
+    url: urls.PRODUCTS,
   });
 }
 
