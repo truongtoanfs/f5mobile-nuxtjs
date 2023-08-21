@@ -8,6 +8,14 @@ function getProducts() {
   });
 }
 
+function getCategory(categoryPath: string) {
+  return request({
+    method: 'get',
+    url: `${urls.PRODUCTS}/${categoryPath}`,
+  });
+}
+
 export default {
   getProducts,
+  getCategory,
 }

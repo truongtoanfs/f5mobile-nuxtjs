@@ -88,6 +88,62 @@ INSERT INTO series (series, link, series_img) VALUES ('Ipad mini', '/series/ipad
 INSERT INTO series (series, link, series_img) VALUES ('Ipad pro', '/series/ipad-pro', '');
 INSERT INTO series (series, link, series_img) VALUES ('Ipad gen', '/series/ipad-gen', '');
 
+CREATE TABLE series_color (
+  series_id BIGINT REFERENCES series (id),
+  color_id BIGINT REFERENCES color (id)
+);
+
+INSERT INTO series_color (series_id, color_id) VALUES (1, 1);
+INSERT INTO series_color (series_id, color_id) VALUES (1, 2);
+INSERT INTO series_color (series_id, color_id) VALUES (1, 3);
+INSERT INTO series_color (series_id, color_id) VALUES (1, 5);
+INSERT INTO series_color (series_id, color_id) VALUES (1, 6);
+
+INSERT INTO series_color (series_id, color_id) VALUES (2, 1);
+INSERT INTO series_color (series_id, color_id) VALUES (2, 2);
+INSERT INTO series_color (series_id, color_id) VALUES (2, 3);
+INSERT INTO series_color (series_id, color_id) VALUES (2, 5);
+INSERT INTO series_color (series_id, color_id) VALUES (2, 6);
+
+INSERT INTO series_color (series_id, color_id) VALUES (3, 3);
+INSERT INTO series_color (series_id, color_id) VALUES (3, 4);
+INSERT INTO series_color (series_id, color_id) VALUES (3, 5);
+INSERT INTO series_color (series_id, color_id) VALUES (3, 6);
+
+INSERT INTO series_color (series_id, color_id) VALUES (4, 3);
+INSERT INTO series_color (series_id, color_id) VALUES (4, 4);
+INSERT INTO series_color (series_id, color_id) VALUES (4, 5);
+INSERT INTO series_color (series_id, color_id) VALUES (4, 6);
+
+CREATE TABLE series_status (
+  series_id BIGINT REFERENCES series (id),
+  status_id BIGINT REFERENCES status (id)
+);
+
+INSERT INTO series_status (series_id, status_id) VALUES (1, 1);
+INSERT INTO series_status (series_id, status_id) VALUES (2, 1);
+INSERT INTO series_status (series_id, status_id) VALUES (3, 1);
+INSERT INTO series_status (series_id, status_id) VALUES (4, 1);
+
+CREATE TABLE series_storage (
+  series_id BIGINT REFERENCES series (id),
+  storage_id BIGINT REFERENCES storage (id)
+);
+
+INSERT INTO series_storage (series_id, storage_id) VALUES (1, 2);
+INSERT INTO series_storage (series_id, storage_id) VALUES (1, 3);
+
+
+INSERT INTO series_storage (series_id, storage_id) VALUES (2, 2);
+INSERT INTO series_storage (series_id, storage_id) VALUES (2, 3);
+
+INSERT INTO series_storage (series_id, storage_id) VALUES (3, 2);
+INSERT INTO series_storage (series_id, storage_id) VALUES (3, 3);
+
+INSERT INTO series_storage (series_id, storage_id) VALUES (4, 2);
+INSERT INTO series_storage (series_id, storage_id) VALUES (4, 3);
+
+
 CREATE TABLE product (
   id BIGSERIAL NOT NULL PRIMARY KEY,
   name VARCHAR(200) NOT NULL,

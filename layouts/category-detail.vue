@@ -1,6 +1,5 @@
 <template>
-  <div class="bg-red-200">
-    Layout category detail
+  <div>
     <slot />
   </div>
 </template>

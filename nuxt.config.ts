@@ -13,4 +13,7 @@ export default defineNuxtConfig({
       'defineStore', // import { defineStore } from 'pinia'
     ],
   },
+  typescript: {
+    strict: true
+  }
 })

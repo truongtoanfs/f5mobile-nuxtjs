@@ -21,6 +21,9 @@
   .container {
     @apply px-2 lg:max-w-3xl lg:mx-auto xl:max-w-1300 xl:px-0;
   }
+  .select-box-size {
+    @apply w-4 h-4;
+  }
 }
 
 @layer utilities {
