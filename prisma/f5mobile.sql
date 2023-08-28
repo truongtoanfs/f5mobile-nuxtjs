@@ -51,42 +51,43 @@ CREATE TABLE series (
   id BIGSERIAL NOT NULL PRIMARY KEY,
   series VARCHAR(50) NOT NULL,
   link VARCHAR(50) NOT NULL,
-  series_img VARCHAR(255) NOT NULL
+  series_img VARCHAR(255) NOT NULL,
+  category_id BIGINT REFERENCES category (id)
 );
 
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 14', '/series/iphone-14', '/images/iphone14/avatar_iPhone 14.webp');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 14 plus', '/series/iphone-14plus', '/images/iphone14/avatar_iphone-14-plus.webp');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 14 pro', '/series/iphone-14pro', '/images/iphone14/avatar_iphone-14-pro-max.webp');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 14 promax', '/series/iphone-14promax', '/images/iphone14/avatar_iphone-14-pro.webp');
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 14', '/series/iphone-14', '/images/iphone14/avatar_iPhone 14.webp', 1);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 14 plus', '/series/iphone-14plus', '/images/iphone14/avatar_iphone-14-plus.webp', 1);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 14 pro', '/series/iphone-14pro', '/images/iphone14/avatar_iphone-14-pro-max.webp', 1);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 14 promax', '/series/iphone-14promax', '/images/iphone14/avatar_iphone-14-pro.webp', 1);
 
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 13', '/series/iphone-13', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 13 mini', '/series/iphone-13mini', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 13 pro', '/series/iphone-13pro', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 13 promax', '/series/iphone-13promax', '');
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 13', '/series/iphone-13', '', 2);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 13 mini', '/series/iphone-13mini', '', 2);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 13 pro', '/series/iphone-13pro', '', 2);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 13 promax', '/series/iphone-13promax', '', 2);
 
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 12', '/series/iphone-12', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 12 mini', '/series/iphone-12mini', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 12 pro', '/series/iphone-12pro', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 12 promax', '/series/iphone-12promax', '');
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 12', '/series/iphone-12', '', 3);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 12 mini', '/series/iphone-12mini', '', 3);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 12 pro', '/series/iphone-12pro', '', 3);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 12 promax', '/series/iphone-12promax', '', 3);
 
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 11', '/series/iphone-11', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 11 pro', '/series/iphone-11pro', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 11 promax', '/series/iphone-11promax', '');
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 11', '/series/iphone-11', '', 4);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 11 pro', '/series/iphone-11pro', '', 4);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 11 promax', '/series/iphone-11promax', '', 4);
 
-INSERT INTO series (series, link, series_img) VALUES ('Iphone X', '/series/iphone-x', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone Xs', '/series/iphone-xs', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone XS Max', '/series/iphone-xsmax', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone XR', '/series/iphone-xr', '');
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone X', '/series/iphone-x', '', 5);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone Xs', '/series/iphone-xs', '', 5);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone XS Max', '/series/iphone-xsmax', '', 5);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone XR', '/series/iphone-xr', '', 5);
 
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 7', '/series/iphone-7', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 7 Plus', '/series/iphone-7-plus', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 8', '/series/iphone-8', '');
-INSERT INTO series (series, link, series_img) VALUES ('Iphone 8 Plus', '/series/iphone-8-plus', '');
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 7', '/series/iphone-7', '', 6);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 7 Plus', '/series/iphone-7-plus', '', 6);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 8', '/series/iphone-8', '', 6);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Iphone 8 Plus', '/series/iphone-8-plus', '', 6);
 
-INSERT INTO series (series, link, series_img) VALUES ('Ipad air', '/series/ipad-air', '');
-INSERT INTO series (series, link, series_img) VALUES ('Ipad mini', '/series/ipad-mini', '');
-INSERT INTO series (series, link, series_img) VALUES ('Ipad pro', '/series/ipad-pro', '');
-INSERT INTO series (series, link, series_img) VALUES ('Ipad gen', '/series/ipad-gen', '');
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Ipad air', '/series/ipad-air', '', 7);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Ipad mini', '/series/ipad-mini', '', 7);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Ipad pro', '/series/ipad-pro', '', 7);
+INSERT INTO series (series, link, series_img, category_id) VALUES ('Ipad gen', '/series/ipad-gen', '', 7);
 
 CREATE TABLE series_color (
   series_id BIGINT REFERENCES series (id),
@@ -243,3 +244,11 @@ INSERT INTO product (name, new_price, old_price, total, sold, description, img_u
 VALUES ('iPhone 14 Promax 128GB- 100% Fullbox VN/A', 26400000, NULL, 12, 2, '', '/images/iphone14/iPhone 14 Promax trang.webp', 1, 4, 5, 3, 1);
 INSERT INTO product (name, new_price, old_price, total, sold, description, img_url, category_id, series_id, color_id, storage_id, status_id)
 VALUES ('iPhone 14 Promax 128GB- 100% Fullbox VN/A', 26400000, NULL, 413, 3, '', '/images/iphone14/ip-14-pro-max-tim-1.webp', 1, 4, 6, 3, 1);
+
+
+SELECT * FROM color WHERE id IN (SELECT color_id FROM series_color WHERE series_color.series_id in (SELECT id FROM series WHERE series.category_id = 1));
+
+SELECT * fROM status
+INNER JOIN series_status ON status.id = series_status.status_id
+INNER JOIN series ON series.id = series_status.status_id
+WHERE series.category_id = 1;
